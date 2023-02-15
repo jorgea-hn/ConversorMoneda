@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de dinero</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <main>
+        <h1>Conversor de Moneda</h1>
+        <form action="/home" method="post">
+            <fieldset class="contenedor">
+
+                <fieldset class="contenedor-hijo">
+                    <label for="valor">Valor</label><br>
+                    <input type="text" id="valor" name="valor"><br>
+                </fieldset>
+                <fieldset class="contenedor-hijo">
+                    <label for="unidad">Unidad</label><br>
+                    <select id="unidad" name="unidad">
+                        <option value="select">Seleccione una unidad</option>
+                        <option value="dolar">DOLAR</option>
+                        <option value="euro">EURO</option>
+                        <option value="pesos">PESOS</option>
+                        <option value="yen">YEN</option>
+                        <option value="dinar">DINAR KUWAITI</option>
+                        <option value="libra">LIBRA ESTERLINA</option>
+                    </select>
+                </fieldset>
+
+            </fieldset><br>
+            <div>
+                <button type="submit">Button</button>
+            </div><br>
+        </form>
+
+        <div class="tabla">
+            <table>
+                <tr>
+                    <th>Valor</th>
+                    <th>Unidad</th>
+                </tr>
+                <tr>
+                    <td>{{dolar}}</td>
+                    <td>DOLAR</td>
+                </tr>
+                <tr>
+                    <td>{{euro}}</td>
+                    <td>EURO</td>
+                </tr>
+                <tr>
+                    <td>{{pesos}}</td>
+                    <td>PESOS</td>
+                </tr>
+                <tr>
+                    <td>{{yen}}</td>
+                    <td>YEN</td>
+                </tr>
+                <tr>
+                    <td>{{dinar}}</td>
+                    <td>DINAR KAWAITI</td>
+                </tr>
+                <tr>
+                    <td>{{libra}}</td>
+                    <td>LIBRA ESTERLINA</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+</body>
+</body>
+</html>
