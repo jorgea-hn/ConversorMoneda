@@ -15,9 +15,9 @@
       "FLASK_APP": "index.py",
       "FLASK_ENV": "production",
       "GUNICORN_CMD_ARGS": "-w 1 -k uvicorn.workers.UvicornWorker"
-    },
-    "startDevCommand": "gunicorn index:app --reload"
+    }
   }
+  
   
   
   
