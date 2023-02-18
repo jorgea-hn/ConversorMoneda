@@ -1,21 +1,23 @@
 {
-    "version": 2,
     "builds": [
-      { "src": "index.py", "use": "@vercel/python" }
+      {
+        "src": "index.py",
+        "use": "@vercel/python"
+      }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "index.py" }
+      {
+        "src": "/(.*)",
+        "dest": "/index.py"
+      }
     ],
     "env": {
       "FLASK_APP": "index.py",
-      "FLASK_ENV": "production"
+      "FLASK_ENV": "production",
+      "GUNICORN_CMD_ARGS": "-w 1 -k uvicorn.workers.UvicornWorker"
     },
-    "frameworks": {
-      "python": {
-        "buildCommand": "pip install -r requirements.txt && python -m pip install -U pip && python -m compileall .",
-        "serveCommand": "flask run --port $PORT"
-      }
-    }
+    "startDevCommand": "gunicorn index:app --reload"
   }
+  
   
   
